@@ -20,270 +20,197 @@ $corFooterPreto: #16181C;
 $gradienteBranco: linear-gradient(145deg, #ffffff, #DFDFDF);
 $gradientePreto: linear-gradient(145deg, #2A2D33, #181A1E);
 
-@keyframes headerFooterAnimation {
-    from{
-        opacity: 0;
-        transform: translateY(50px);
-    }to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes controlAnimation {
-    from{
-        opacity: 0;
-        transform: translatex(150px);
-    }to{
-        opacity: 1;
-        transform: translatex(0);
-    }
-}
-@keyframes mainAnimation {
-    from{
-        opacity: 0;
-        transform: translateY(80px);
-    }to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-//  TAMANHO DE TELA: CELULAR 360X640
 body, body.bodyLightMode{
-        background-image: $gradienteBranco;
-        h1, h2, h3, h4{
-            font-family: BigJohn;
-        }
-    
-        p{
-            font-size: 1rem;
-            line-height: 1.6rem;
-        }
-    
-        img{
-            width: 100%;
-        }
-    
-        .btn-blue{
-            position: relative;
-            display: inline-block;
-            width: 200px;
-            height: 60px;
-            border-radius: 8px;
-            text-align: center;
-            font-family: BigJohn;
-            text-transform: uppercase;
-            background-color: $corAzul;
-            color: $corBranca;
-            text-decoration: none;
-            padding: 20px;
-            cursor: pointer;
-            opacity: 0;
-            animation: mainAnimation 1s normal;
-            animation-delay: .6s;
-            animation-fill-mode: forwards;
-        }
-        .btn-blue:hover{
-            top: -5px;
-            transition: top .3s;
-        }
-        
-        .container{
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            overflow-x: hidden;
-    
-            .header{
-                z-index: 5;
-                position: relative;
-                display: flex;
-                padding: 20px;
-                justify-content: space-between;
-                align-items: center;
-                opacity: 0;
-                animation: headerFooterAnimation .8s normal;
-                animation-fill-mode: forwards;
-                .btnMenuBar{
-                    width: 30px;
-                    height: 30px;
-                    cursor: pointer;
-                    display: flex;
-                    justify-content: space-around;
-                    flex-direction: column;
-                    z-index: 5;
-                    :nth-child(2){
-                        width: 18px;
-                        margin-left: calc(100% - 18px);
-                        
-                    }
-                    :nth-child(3){
-                        width: 25px;
-                        margin-left: calc(100% - 25px);
-                    }
-                    span{
-                        position: relative;
-                        display: block;
-                        border-radius: 2px;
-                        height: 5px;
-                        background-color: $corPreta;
-                        
-                    }
-                }
-            .btnMenuActive{
-    
-                :first-child{
-                    transform: rotateZ(45deg);
-                    width: 100%;
-                }
-                :nth-child(2){
-                    background-color: transparent;
-                }
-                :last-child{
-                    transform: rotateZ(-45deg);
-                    top: -20px;
-                    width: 100%;
-                    margin: 0;
-                }
-                span{
-                    background-color: $corBranca;
-                    transition: 1s;
-                }
-            }
-            nav{
-                display: flex;
-                position: absolute;
-                flex-direction: column;
-                background-color: $corAzul;
-                width: 100vw;
-                left: 0;
-                top: -600px;
-                a{
-                    display: inline-block;
-                    margin-bottom: 15px;
-                    padding: 30px 0;
-                    text-align: center;
-                    text-decoration: none;
-                    color: $corBranca;
-                    font-size: 1.2rem;
-                }
+    background-image: $gradienteBranco;
+    h1, h2, h3, h4{
+        font-family: BigJohn;
+    }
 
-                ::after{
-                    content: "";
-                    position: absolute;
-                    display: block;
-                    width: 100%;
-                    height: 50px;
-                    background-image: linear-gradient(rgba(0, 0, 0, 0.050), transparent);
-                    left: 0;
-                    bottom: -50px;
-                }
-            }
-            .menuActived{
-                top: 0;
-                transition: 1s;
-            }
-            }
-            main{
-                padding: 20px;
-                margin-top: 20px;
+    p{
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+
+    img{
+        width: 100%;
+    }
+
+    .btn-blue{
+        position: relative;
+        display: inline-block;
+        width: 200px;
+        height: 60px;
+        border-radius: 8px;
+        text-align: center;
+        font-family: BigJohn;
+        text-transform: uppercase;
+        background-color: $corAzul;
+        color: $corBranca;
+        text-decoration: none;
+        padding: 20px;
+        cursor: pointer;
+    }
+    .btn-blue:hover{
+        transform: translateY(-5px);
+        transition: .3s;
+
+    }
+    
+    .container{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+
+        .header{
+            position: relative;
+            display: flex;
+            padding: 20px;
+            justify-content: space-between;
+            align-items: center;
+
+            .btnMenuBar{
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
                 display: flex;
-                height: 60%;
                 justify-content: space-around;
                 flex-direction: column;
-                .main-text{
-                    z-index: 1;
-                    h1{
-                        font-size: 1.75rem;
-                        position: relative;
-                        line-height: 2.1rem;
-                        margin-bottom: 1.875rem;
-                        letter-spacing: 2px;
-                        opacity: 0;
-                        animation: mainAnimation 1s normal;
-                        animation-delay: .2s;
-                        animation-fill-mode: forwards;
-                        br{
-                            display: none;
-                        }
-                        b{
-                            color: $corAzul;
-                        }
-                    }
-                    p{
-                        margin-bottom: 3.75rem;
-                        opacity: 0;
-                        animation: mainAnimation 1s normal;
-                        animation-delay: .4s;
-                        animation-fill-mode: forwards;
-                    }
+                z-index: 2;
+                :nth-child(2){
+                    width: 18px;
+                    margin-left: calc(100% - 18px);
+                    
                 }
-    
-                .controle{
-                    position: absolute;
-                    width: 100%;
-                    height: 300px;
-                    left: 0;
-                    overflow-y: hidden;
-                    overflow-x: hidden;
-                    top: calc(100vh - 300px);
-                    z-index: -1;
-                    opacity: 0;
-                    animation: controlAnimation 1s normal;
-                    animation-fill-mode: forwards;
-                    animation-delay: 1s;
-                    img{
-                        position: absolute;
-                        display: block;
-                        width: 800px;
-                        bottom: -300px;
-                        left: -100px;
-                        z-index: -1;
-                        filter: blur(3px);
-                    }
+                :nth-child(3){
+                    width: 25px;
+                    margin-left: calc(100% - 25px);
+                }
+                span{
+                    position: relative;
+                    display: block;
+                    border-radius: 2px;
+                    height: 5px;
+                    background-color: $corPreta;
+                    
                 }
             }
-            footer{
-                display: block;
-                position: absolute;
-                padding: 20px;
-                bottom: 0;
-                margin-bottom: 0;
-                background-color: $corAzul;
+        .btnMenuActive{
+
+            :first-child{
+                transform: rotateZ(45deg);
                 width: 100%;
-                opacity: 0;
-                animation: headerFooterAnimation .8s normal;
-                animation-fill-mode: forwards;
-                animation-delay: 1s;
-                ::before{
-                    content: "";
+            }
+            :nth-child(2){
+                background-color: transparent;
+            }
+            :last-child{
+                transform: rotateZ(-45deg);
+                top: -20px;
+                width: 100%;
+                margin: 0;
+            }
+            span{
+                background-color: $corBranca;
+                transition: 1s;
+            }
+        }
+        nav{
+            display: flex;
+            position: absolute;
+            flex-direction: column;
+            background-color: $corAzul;
+            width: 100vw;
+            left: 0;
+            top: -500px;
+            a{
+                display: inline-block;
+                margin-bottom: 15px;
+                padding: 30px 0;
+                text-align: center;
+                text-decoration: none;
+                color: $corBranca;
+                font-size: 1.2rem;
+            }
+        }
+        .menuActived{
+            top: 0;
+            transition: 1s;
+        }
+        }
+        main{
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            height: 60%;
+            justify-content: space-around;
+            flex-direction: column;
+            .main-text{
+                h1{
+                    font-size: 1.75rem;
+                    line-height: 2.1rem;
+                    margin-bottom: 1.875rem;
+                    letter-spacing: 2px;
+                    br{
+                        display: none;
+                    }
+                    b{
+                        color: $corAzul;
+                    }
+                }
+                p{
+                    margin-bottom: 3.75rem;
+                }
+            }
+
+            .controle{
+                position: absolute;
+                width: 100%;
+                height: 300px;
+                left: 0;
+                overflow-y: hidden;
+                top: calc(100vh - 300px);
+                z-index: -1;
+                img{
                     position: absolute;
                     display: block;
-                    width: 100%;
-                    height: 50px;
-                    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.130));
-                    left: 0;
-                    top: -50px;
-                }
-                :nth-child(1){
-                    background-color: $corBranca;
-                }
-                :nth-child(2){
-                    background-color: $corPreta;
-                }
-                .colorOption{
-                    display: inline-block;
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 12px;
-                    margin-right: 20px;
-                    cursor: pointer;
-                }
-                .selectedOpition{
-                    border: 3px solid $corPreta;
+                    width: 800px;
+                    bottom: -420px;
+                    left: -100px;
+                    z-index: -1;
+                    filter: blur(3px);
                 }
             }
         }
+        footer{
+            display: block;
+            position: absolute;
+            padding: 20px;
+            bottom: 0;
+            margin-bottom: -30px;
+            background-color: $corAzul;
+            width: 100%;
+            transition: background 1s;
+
+            :nth-child(1){
+                background-color: $corBranca;
+            }
+            :nth-child(2){
+                background-color: $corPreta;
+            }
+            .colorOption{
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                border-radius: 12px;
+                margin-right: 20px;
+                cursor: pointer;
+            }
+            .selectedOpition{
+                border: 3px solid $corPreta;
+            }
+        }
+    }
 }
 
 body.bodyDarkMode{
@@ -304,162 +231,4 @@ body.bodyDarkMode{
     }
 }
 
-//  TAMANHO DE TELA: TABLET 700X1024
-@media screen and (min-width: 700px){
-    body, body.bodyLightMode, body.bodyDarkMode{
-        .container{
-            .header{
-                padding: 50px 0;
-                nav{
-                    padding: 50px 0 40px;
-                }
-            }
-            .header, main, footer{
-                padding-left: 60px;
-                padding-right: 60px;
-            }
-            main{
-                position: relative;
-                height: 50%;
-                margin-top: 0;
-                top: 0;
-                .main-text{
-                    h1{
-                        font-size: 2.18rem;
-                        line-height: 3rem;
-                        margin-bottom: 2.8rem;
-                        br{
-                            display: inline;
-                        }
-                    }
 
-                    p{
-                        font-size: 1.3rem;
-                        line-height: 1.9rem; 
-                        margin-bottom: 4.3rem;
-                    }
-                }
-                .controle{
-                    position: absolute;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 650px;
-                    width: 100%;
-                    top: calc(100vh - 825px);
-                    img{
-                        width: 110vw;
-                        position: relative;
-                        bottom: -80px;
-                        left: auto;
-                        filter: none;
-                    }
-                }
-
-            }
-            footer{
-                margin-bottom: 0;
-                bottom: 0;
-                padding-top: 25px;
-                padding-bottom: 25px;
-            }
-        }
-    }
-}
-
-// TAMANHO DE TELA: NOTEBOOK MINI 1024X700
-@media screen and (min-width: 1024px) and (max-height: 800px) {
-    body, body.bodyLightMode, body.bodyDarkMode{
-        .container{
-            .header{
-                justify-content: left;
-                align-items: center;
-                padding: 30px 60px;
-                .btnMenuBar{
-                    display: none;
-                }
-                nav{
-                    position: relative;
-                    top: auto;
-                    justify-content: right;
-                    align-items: center;
-                    flex-direction: row;
-                    right: auto;
-                    width: auto;
-                    padding: 0;
-                    background-color: transparent;
-                    ::after{
-                        display: none;
-                    }
-                    :first-child{
-                        margin-left: 80px;
-                    }
-                    a{
-                        display: inline-block;
-                        margin-left: 50px;
-                        margin-bottom: 0;
-                        padding: 5px 10px;
-                        transition-property: color;
-                        
-                    }
-                    a:hover{
-                        color: $corAzul;
-                        transition: .5s;
-                    }
-                }
-            }
-            main{
-                .main-text{
-                    margin-top: 100px;
-                    p{
-                        max-width: 600px;
-                    }
-                }
-                .controle{
-                    width: 50%;
-                    left: 50%;
-                    img{
-                        width: 100vw;
-                        right: -50%;
-                    }
-                }
-            }
-            
-        }
-    }
-
-    body.bodyLightMode{
-        .container .header nav a{
-            color: $corPreta;
-        }
-    }
-}
-
-// TAMANHO DE TELA: NOTEBOOK PADRÃO 1200X800
-@media screen and (min-width: 1200px){
-    body, body.bodyLightMode, body.bodyDarkMode{
-        .container{
-            .header, main, footer{
-                padding-left: 100px;
-                padding-right: 100px;
-            }
-            main{
-                .controle{
-                    width: 100%;
-                    left: 0;
-                    img{
-                        width: 1000px;
-                        bottom: -50px;
-                    }
-                }
-            }
-            footer{
-                .colorOption{
-                    width: 70px;
-                    height: 70px;
-                    border-radius: 20px;
-                }
-            }
-        }
-    }
-}

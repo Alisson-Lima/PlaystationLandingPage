@@ -1,5 +1,4 @@
 (function(){
-    // loadBody()
     Menu()
     TurnMode()
 })()

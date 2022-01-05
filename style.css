@@ -13,84 +13,6 @@
           box-sizing: border-box;
 }
 
-@-webkit-keyframes headerFooterAnimation {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes headerFooterAnimation {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes controlAnimation {
-  from {
-    opacity: 0;
-    -webkit-transform: translatex(150px);
-            transform: translatex(150px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translatex(0);
-            transform: translatex(0);
-  }
-}
-
-@keyframes controlAnimation {
-  from {
-    opacity: 0;
-    -webkit-transform: translatex(150px);
-            transform: translatex(150px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translatex(0);
-            transform: translatex(0);
-  }
-}
-
-@-webkit-keyframes mainAnimation {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(80px);
-            transform: translateY(80px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes mainAnimation {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(80px);
-            transform: translateY(80px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
 body, body.bodyLightMode {
   background-image: linear-gradient(145deg, #ffffff, #DFDFDF);
 }
@@ -122,19 +44,13 @@ body .btn-blue, body.bodyLightMode .btn-blue {
   text-decoration: none;
   padding: 20px;
   cursor: pointer;
-  opacity: 0;
-  -webkit-animation: mainAnimation 1s normal;
-          animation: mainAnimation 1s normal;
-  -webkit-animation-delay: .6s;
-          animation-delay: .6s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 body .btn-blue:hover, body.bodyLightMode .btn-blue:hover {
-  top: -5px;
-  -webkit-transition: top .3s;
-  transition: top .3s;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 body .container, body.bodyLightMode .container {
@@ -145,7 +61,6 @@ body .container, body.bodyLightMode .container {
 }
 
 body .container .header, body.bodyLightMode .container .header {
-  z-index: 5;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -157,11 +72,6 @@ body .container .header, body.bodyLightMode .container .header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  opacity: 0;
-  -webkit-animation: headerFooterAnimation .8s normal;
-          animation: headerFooterAnimation .8s normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 body .container .header .btnMenuBar, body.bodyLightMode .container .header .btnMenuBar {
@@ -177,7 +87,7 @@ body .container .header .btnMenuBar, body.bodyLightMode .container .header .btnM
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  z-index: 5;
+  z-index: 2;
 }
 
 body .container .header .btnMenuBar :nth-child(2), body.bodyLightMode .container .header .btnMenuBar :nth-child(2) {
@@ -234,7 +144,7 @@ body .container .header nav, body.bodyLightMode .container .header nav {
   background-color: #00439C;
   width: 100vw;
   left: 0;
-  top: -600px;
+  top: -500px;
 }
 
 body .container .header nav a, body.bodyLightMode .container .header nav a {
@@ -245,18 +155,6 @@ body .container .header nav a, body.bodyLightMode .container .header nav a {
   text-decoration: none;
   color: #F1F1F1;
   font-size: 1.2rem;
-}
-
-body .container .header nav ::after, body.bodyLightMode .container .header nav ::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 50px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.05)), to(transparent));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.05), transparent);
-  left: 0;
-  bottom: -50px;
 }
 
 body .container .header .menuActived, body.bodyLightMode .container .header .menuActived {
@@ -280,23 +178,11 @@ body .container main, body.bodyLightMode .container main {
           flex-direction: column;
 }
 
-body .container main .main-text, body.bodyLightMode .container main .main-text {
-  z-index: 1;
-}
-
 body .container main .main-text h1, body.bodyLightMode .container main .main-text h1 {
   font-size: 1.75rem;
-  position: relative;
   line-height: 2.1rem;
   margin-bottom: 1.875rem;
   letter-spacing: 2px;
-  opacity: 0;
-  -webkit-animation: mainAnimation 1s normal;
-          animation: mainAnimation 1s normal;
-  -webkit-animation-delay: .2s;
-          animation-delay: .2s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 body .container main .main-text h1 br, body.bodyLightMode .container main .main-text h1 br {
@@ -309,13 +195,6 @@ body .container main .main-text h1 b, body.bodyLightMode .container main .main-t
 
 body .container main .main-text p, body.bodyLightMode .container main .main-text p {
   margin-bottom: 3.75rem;
-  opacity: 0;
-  -webkit-animation: mainAnimation 1s normal;
-          animation: mainAnimation 1s normal;
-  -webkit-animation-delay: .4s;
-          animation-delay: .4s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 body .container main .controle, body.bodyLightMode .container main .controle {
@@ -324,23 +203,15 @@ body .container main .controle, body.bodyLightMode .container main .controle {
   height: 300px;
   left: 0;
   overflow-y: hidden;
-  overflow-x: hidden;
   top: calc(100vh - 300px);
   z-index: -1;
-  opacity: 0;
-  -webkit-animation: controlAnimation 1s normal;
-          animation: controlAnimation 1s normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
 }
 
 body .container main .controle img, body.bodyLightMode .container main .controle img {
   position: absolute;
   display: block;
   width: 800px;
-  bottom: -300px;
+  bottom: -420px;
   left: -100px;
   z-index: -1;
   -webkit-filter: blur(3px);
@@ -352,28 +223,11 @@ body .container footer, body.bodyLightMode .container footer {
   position: absolute;
   padding: 20px;
   bottom: 0;
-  margin-bottom: 0;
+  margin-bottom: -30px;
   background-color: #00439C;
   width: 100%;
-  opacity: 0;
-  -webkit-animation: headerFooterAnimation .8s normal;
-          animation: headerFooterAnimation .8s normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-}
-
-body .container footer ::before, body.bodyLightMode .container footer ::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 50px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.13)));
-  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.13));
-  left: 0;
-  top: -50px;
+  -webkit-transition: background 1s;
+  transition: background 1s;
 }
 
 body .container footer :nth-child(1), body.bodyLightMode .container footer :nth-child(1) {
@@ -419,155 +273,5 @@ body.bodyDarkMode .header .btnMenuBar span {
 
 body.bodyDarkMode footer .selectedOpition {
   border: 3px solid #00439C;
-}
-
-@media screen and (min-width: 700px) {
-  body .container .header, body.bodyLightMode .container .header, body.bodyDarkMode .container .header {
-    padding: 50px 0;
-  }
-  body .container .header nav, body.bodyLightMode .container .header nav, body.bodyDarkMode .container .header nav {
-    padding: 50px 0 40px;
-  }
-  body .container .header, body .container main, body .container footer, body.bodyLightMode .container .header, body.bodyLightMode .container main, body.bodyLightMode .container footer, body.bodyDarkMode .container .header, body.bodyDarkMode .container main, body.bodyDarkMode .container footer {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-  body .container main, body.bodyLightMode .container main, body.bodyDarkMode .container main {
-    position: relative;
-    height: 50%;
-    margin-top: 0;
-    top: 0;
-  }
-  body .container main .main-text h1, body.bodyLightMode .container main .main-text h1, body.bodyDarkMode .container main .main-text h1 {
-    font-size: 2.18rem;
-    line-height: 3rem;
-    margin-bottom: 2.8rem;
-  }
-  body .container main .main-text h1 br, body.bodyLightMode .container main .main-text h1 br, body.bodyDarkMode .container main .main-text h1 br {
-    display: inline;
-  }
-  body .container main .main-text p, body.bodyLightMode .container main .main-text p, body.bodyDarkMode .container main .main-text p {
-    font-size: 1.3rem;
-    line-height: 1.9rem;
-    margin-bottom: 4.3rem;
-  }
-  body .container main .controle, body.bodyLightMode .container main .controle, body.bodyDarkMode .container main .controle {
-    position: absolute;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 650px;
-    width: 100%;
-    top: calc(100vh - 825px);
-  }
-  body .container main .controle img, body.bodyLightMode .container main .controle img, body.bodyDarkMode .container main .controle img {
-    width: 110vw;
-    position: relative;
-    bottom: -80px;
-    left: auto;
-    -webkit-filter: none;
-            filter: none;
-  }
-  body .container footer, body.bodyLightMode .container footer, body.bodyDarkMode .container footer {
-    margin-bottom: 0;
-    bottom: 0;
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
-}
-
-@media screen and (min-width: 1024px) and (max-height: 800px) {
-  body .container .header, body.bodyLightMode .container .header, body.bodyDarkMode .container .header {
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 30px 60px;
-  }
-  body .container .header .btnMenuBar, body.bodyLightMode .container .header .btnMenuBar, body.bodyDarkMode .container .header .btnMenuBar {
-    display: none;
-  }
-  body .container .header nav, body.bodyLightMode .container .header nav, body.bodyDarkMode .container .header nav {
-    position: relative;
-    top: auto;
-    -webkit-box-pack: right;
-        -ms-flex-pack: right;
-            justify-content: right;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    right: auto;
-    width: auto;
-    padding: 0;
-    background-color: transparent;
-  }
-  body .container .header nav ::after, body.bodyLightMode .container .header nav ::after, body.bodyDarkMode .container .header nav ::after {
-    display: none;
-  }
-  body .container .header nav :first-child, body.bodyLightMode .container .header nav :first-child, body.bodyDarkMode .container .header nav :first-child {
-    margin-left: 80px;
-  }
-  body .container .header nav a, body.bodyLightMode .container .header nav a, body.bodyDarkMode .container .header nav a {
-    display: inline-block;
-    margin-left: 50px;
-    margin-bottom: 0;
-    padding: 5px 10px;
-    -webkit-transition-property: color;
-    transition-property: color;
-  }
-  body .container .header nav a:hover, body.bodyLightMode .container .header nav a:hover, body.bodyDarkMode .container .header nav a:hover {
-    color: #00439C;
-    -webkit-transition: .5s;
-    transition: .5s;
-  }
-  body .container main .main-text, body.bodyLightMode .container main .main-text, body.bodyDarkMode .container main .main-text {
-    margin-top: 100px;
-  }
-  body .container main .main-text p, body.bodyLightMode .container main .main-text p, body.bodyDarkMode .container main .main-text p {
-    max-width: 600px;
-  }
-  body .container main .controle, body.bodyLightMode .container main .controle, body.bodyDarkMode .container main .controle {
-    width: 50%;
-    left: 50%;
-  }
-  body .container main .controle img, body.bodyLightMode .container main .controle img, body.bodyDarkMode .container main .controle img {
-    width: 100vw;
-    right: -50%;
-  }
-  body.bodyLightMode .container .header nav a {
-    color: #222222;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  body .container .header, body .container main, body .container footer, body.bodyLightMode .container .header, body.bodyLightMode .container main, body.bodyLightMode .container footer, body.bodyDarkMode .container .header, body.bodyDarkMode .container main, body.bodyDarkMode .container footer {
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-  body .container main .controle, body.bodyLightMode .container main .controle, body.bodyDarkMode .container main .controle {
-    width: 100%;
-    left: 0;
-  }
-  body .container main .controle img, body.bodyLightMode .container main .controle img, body.bodyDarkMode .container main .controle img {
-    width: 1000px;
-    bottom: -50px;
-  }
-  body .container footer .colorOption, body.bodyLightMode .container footer .colorOption, body.bodyDarkMode .container footer .colorOption {
-    width: 70px;
-    height: 70px;
-    border-radius: 20px;
-  }
 }
 /*# sourceMappingURL=style.css.map */
