@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@font-face {
+  font-family: BigJohn;
+  src: url(bigjohn.otf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body, body.bodyLightMode {
+  background-image: linear-gradient(145deg, #ffffff, #DFDFDF);
+}
+
+body h1, body h2, body h3, body h4, body.bodyLightMode h1, body.bodyLightMode h2, body.bodyLightMode h3, body.bodyLightMode h4 {
+  font-family: BigJohn;
+}
+
+body p, body.bodyLightMode p {
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+body img, body.bodyLightMode img {
+  width: 100%;
+}
+
+body .btn-blue, body.bodyLightMode .btn-blue {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: BigJohn;
+  text-transform: uppercase;
+  background-color: #00439C;
+  color: #F1F1F1;
+  text-decoration: none;
+  padding: 20px;
+  cursor: pointer;
+}
+
+body .btn-blue:hover, body.bodyLightMode .btn-blue:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body .container, body.bodyLightMode .container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+body .container .header, body.bodyLightMode .container .header {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .header .btnMenuBar, body.bodyLightMode .container .header .btnMenuBar {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 2;
+}
+
+body .container .header .btnMenuBar :nth-child(2), body.bodyLightMode .container .header .btnMenuBar :nth-child(2) {
+  width: 18px;
+  margin-left: calc(100% - 18px);
+}
+
+body .container .header .btnMenuBar :nth-child(3), body.bodyLightMode .container .header .btnMenuBar :nth-child(3) {
+  width: 25px;
+  margin-left: calc(100% - 25px);
+}
+
+body .container .header .btnMenuBar span, body.bodyLightMode .container .header .btnMenuBar span {
+  position: relative;
+  display: block;
+  border-radius: 2px;
+  height: 5px;
+  background-color: #222222;
+}
+
+body .container .header .btnMenuActive :first-child, body.bodyLightMode .container .header .btnMenuActive :first-child {
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+  width: 100%;
+}
+
+body .container .header .btnMenuActive :nth-child(2), body.bodyLightMode .container .header .btnMenuActive :nth-child(2) {
+  background-color: transparent;
+}
+
+body .container .header .btnMenuActive :last-child, body.bodyLightMode .container .header .btnMenuActive :last-child {
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+  top: -20px;
+  width: 100%;
+  margin: 0;
+}
+
+body .container .header .btnMenuActive span, body.bodyLightMode .container .header .btnMenuActive span {
+  background-color: #F1F1F1;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+body .container .header nav, body.bodyLightMode .container .header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #00439C;
+  width: 100vw;
+  left: 0;
+  top: -500px;
+}
+
+body .container .header nav a, body.bodyLightMode .container .header nav a {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 30px 0;
+  text-align: center;
+  text-decoration: none;
+  color: #F1F1F1;
+  font-size: 1.2rem;
+}
+
+body .container .header .menuActived, body.bodyLightMode .container .header .menuActived {
+  top: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+body .container main, body.bodyLightMode .container main {
+  padding: 20px;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .container main .main-text h1, body.bodyLightMode .container main .main-text h1 {
+  font-size: 1.75rem;
+  line-height: 2.1rem;
+  margin-bottom: 1.875rem;
+  letter-spacing: 2px;
+}
+
+body .container main .main-text h1 br, body.bodyLightMode .container main .main-text h1 br {
+  display: none;
+}
+
+body .container main .main-text h1 b, body.bodyLightMode .container main .main-text h1 b {
+  color: #00439C;
+}
+
+body .container main .main-text p, body.bodyLightMode .container main .main-text p {
+  margin-bottom: 3.75rem;
+}
+
+body .container main .controle, body.bodyLightMode .container main .controle {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  left: 0;
+  overflow-y: hidden;
+  top: calc(100vh - 300px);
+  z-index: -1;
+}
+
+body .container main .controle img, body.bodyLightMode .container main .controle img {
+  position: absolute;
+  display: block;
+  width: 800px;
+  bottom: -420px;
+  left: -100px;
+  z-index: -1;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+body .container footer, body.bodyLightMode .container footer {
+  display: block;
+  position: absolute;
+  padding: 20px;
+  bottom: 0;
+  margin-bottom: -30px;
+  background-color: #00439C;
+  width: 100%;
+  -webkit-transition: background 1s;
+  transition: background 1s;
+}
+
+body .container footer :nth-child(1), body.bodyLightMode .container footer :nth-child(1) {
+  background-color: #F1F1F1;
+}
+
+body .container footer :nth-child(2), body.bodyLightMode .container footer :nth-child(2) {
+  background-color: #222222;
+}
+
+body .container footer .colorOption, body.bodyLightMode .container footer .colorOption {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+body .container footer .selectedOpition, body.bodyLightMode .container footer .selectedOpition {
+  border: 3px solid #222222;
+}
+
+body.bodyDarkMode {
+  background-image: linear-gradient(145deg, #2A2D33, #181A1E);
+}
+
+body.bodyDarkMode h1, body.bodyDarkMode p {
+  -webkit-transition: 1s;
+  transition: 1s;
+  color: #F1F1F1;
+}
+
+body.bodyDarkMode footer, body.bodyDarkMode .header nav {
+  -webkit-transition: 1s;
+  transition: 1s;
+  background-color: #16181C;
+}
+
+body.bodyDarkMode .header .btnMenuBar span {
+  background-color: #F1F1F1;
+}
+
+body.bodyDarkMode footer .selectedOpition {
+  border: 3px solid #00439C;
+}
+/*# sourceMappingURL=style.css.map */
