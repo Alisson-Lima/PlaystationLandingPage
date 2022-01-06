@@ -91,10 +91,6 @@
   }
 }
 
-body, body.bodyLightMode {
-  background-image: linear-gradient(145deg, #ffffff, #DFDFDF);
-}
-
 body h1, body h2, body h3, body h4, body.bodyLightMode h1, body.bodyLightMode h2, body.bodyLightMode h3, body.bodyLightMode h4 {
   font-family: BigJohn;
 }
@@ -138,6 +134,7 @@ body .btn-blue:hover, body.bodyLightMode .btn-blue:hover {
 }
 
 body .container, body.bodyLightMode .container {
+  background-image: linear-gradient(145deg, #ffffff, #DFDFDF);
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -281,7 +278,7 @@ body .container main, body.bodyLightMode .container main {
 }
 
 body .container main .main-text, body.bodyLightMode .container main .main-text {
-  z-index: 1;
+  z-index: 3;
 }
 
 body .container main .main-text h1, body.bodyLightMode .container main .main-text h1 {
@@ -320,13 +317,22 @@ body .container main .main-text p, body.bodyLightMode .container main .main-text
 
 body .container main .controle, body.bodyLightMode .container main .controle {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
-  height: 300px;
   left: 0;
+  top: 0;
+  height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden;
-  top: calc(100vh - 300px);
-  z-index: -1;
+  z-index: 1;
   opacity: 0;
   -webkit-animation: controlAnimation 1s normal;
           animation: controlAnimation 1s normal;
@@ -337,17 +343,17 @@ body .container main .controle, body.bodyLightMode .container main .controle {
 }
 
 body .container main .controle img, body.bodyLightMode .container main .controle img {
-  position: absolute;
   display: block;
+  position: absolute;
   width: 800px;
   bottom: -300px;
   left: -100px;
-  z-index: -1;
   -webkit-filter: blur(3px);
           filter: blur(3px);
 }
 
 body .container footer, body.bodyLightMode .container footer {
+  z-index: 4;
   display: block;
   position: absolute;
   padding: 20px;
@@ -397,7 +403,7 @@ body .container footer .selectedOpition, body.bodyLightMode .container footer .s
   border: 3px solid #222222;
 }
 
-body.bodyDarkMode {
+body.bodyDarkMode .container {
   background-image: linear-gradient(145deg, #2A2D33, #181A1E);
 }
 
@@ -423,7 +429,7 @@ body.bodyDarkMode footer .selectedOpition {
 
 @media screen and (min-width: 700px) {
   body .container .header, body.bodyLightMode .container .header, body.bodyDarkMode .container .header {
-    padding: 50px 0;
+    padding: 30px 0;
   }
   body .container .header nav, body.bodyLightMode .container .header nav, body.bodyDarkMode .container .header nav {
     padding: 50px 0 40px;
@@ -452,24 +458,12 @@ body.bodyDarkMode footer .selectedOpition {
     margin-bottom: 4.3rem;
   }
   body .container main .controle, body.bodyLightMode .container main .controle, body.bodyDarkMode .container main .controle {
-    position: absolute;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 650px;
+    top: -130px;
     width: 100%;
-    top: calc(100vh - 825px);
   }
   body .container main .controle img, body.bodyLightMode .container main .controle img, body.bodyDarkMode .container main .controle img {
-    width: 110vw;
-    position: relative;
-    bottom: -80px;
+    width: 1000px;
+    bottom: -250px;
     left: auto;
     -webkit-filter: none;
             filter: none;
@@ -479,6 +473,13 @@ body.bodyDarkMode footer .selectedOpition {
     bottom: 0;
     padding-top: 25px;
     padding-bottom: 25px;
+  }
+}
+
+@media screen and (max-height: 728px) {
+  body .container footer, body.bodyLightMode .container footer, body.bodyDarkMode .container footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -543,8 +544,8 @@ body.bodyDarkMode footer .selectedOpition {
     left: 50%;
   }
   body .container main .controle img, body.bodyLightMode .container main .controle img, body.bodyDarkMode .container main .controle img {
-    width: 100vw;
-    right: -50%;
+    width: 1000px;
+    left: 0;
   }
   body.bodyLightMode .container .header nav a {
     color: #222222;
@@ -556,18 +557,126 @@ body.bodyDarkMode footer .selectedOpition {
     padding-left: 100px;
     padding-right: 100px;
   }
-  body .container main .controle, body.bodyLightMode .container main .controle, body.bodyDarkMode .container main .controle {
-    width: 100%;
-    left: 0;
-  }
   body .container main .controle img, body.bodyLightMode .container main .controle img, body.bodyDarkMode .container main .controle img {
-    width: 1000px;
-    bottom: -50px;
+    width: 1100px;
   }
   body .container footer .colorOption, body.bodyLightMode .container footer .colorOption, body.bodyDarkMode .container footer .colorOption {
     width: 70px;
     height: 70px;
     border-radius: 20px;
+  }
+}
+
+@media screen and (min-width: 1650px) {
+  body, body.bodyLightMode, body.bodyDarkMode {
+    position: absolute;
+    left: calc(50% - 800px);
+    top: calc(50% - 400px);
+  }
+  body .container, body.bodyLightMode .container, body.bodyDarkMode .container {
+    display: block;
+    max-width: 1600px;
+    height: 800px;
+    border: 15px solid #222222;
+    border-radius: 50px;
+  }
+  body .container main .controle, body.bodyLightMode .container main .controle, body.bodyDarkMode .container main .controle {
+    height: 800px;
+  }
+  body.bodyDarkMode .container {
+    border: 15px solid #F1F1F1;
+  }
+}
+
+@media screen and (min-height: 801px) and (min-width: 1200px) {
+  body .container .header, body.bodyLightMode .container .header, body.bodyDarkMode .container .header {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 30px 100px;
+  }
+  body .container .header .btnMenuBar, body.bodyLightMode .container .header .btnMenuBar, body.bodyDarkMode .container .header .btnMenuBar {
+    display: none;
+  }
+  body .container .header nav, body.bodyLightMode .container .header nav, body.bodyDarkMode .container .header nav {
+    position: relative;
+    top: auto;
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    right: auto;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+  }
+  body .container .header nav ::after, body.bodyLightMode .container .header nav ::after, body.bodyDarkMode .container .header nav ::after {
+    display: none;
+  }
+  body .container .header nav :first-child, body.bodyLightMode .container .header nav :first-child, body.bodyDarkMode .container .header nav :first-child {
+    margin-left: 80px;
+  }
+  body .container .header nav a, body.bodyLightMode .container .header nav a, body.bodyDarkMode .container .header nav a {
+    display: inline-block;
+    margin-left: 50px;
+    margin-bottom: 0;
+    padding: 5px 10px;
+    color: #222222;
+    -webkit-transition-property: color;
+    transition-property: color;
+  }
+  body .container .header nav a:hover, body.bodyLightMode .container .header nav a:hover, body.bodyDarkMode .container .header nav a:hover {
+    color: #00439C;
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  body .container main .main-text, body.bodyLightMode .container main .main-text, body.bodyDarkMode .container main .main-text {
+    margin-top: 100px;
+  }
+  body .container main .main-text p, body.bodyLightMode .container main .main-text p, body.bodyDarkMode .container main .main-text p {
+    max-width: 600px;
+  }
+  body .container main .controle, body.bodyLightMode .container main .controle, body.bodyDarkMode .container main .controle {
+    width: 50%;
+    left: 50%;
+    top: -160px;
+  }
+  body .container main .controle img, body.bodyLightMode .container main .controle img, body.bodyDarkMode .container main .controle img {
+    width: 1200px;
+    left: 25px;
+    bottom: -350px;
+  }
+  body.bodyDarkMode .container .header nav a {
+    color: #F1F1F1;
+  }
+}
+
+@media screen and (max-height: 900px) and (max-width: 1199px) and (min-width: 700px) {
+  body .container main .main-text, body.bodyLightMode .container main .main-text, body.bodyDarkMode .container main .main-text {
+    margin-top: 100px;
+  }
+  body .container main .main-text p, body.bodyLightMode .container main .main-text p, body.bodyDarkMode .container main .main-text p {
+    max-width: 800px;
+  }
+  body .container main .controle, body.bodyLightMode .container main .controle, body.bodyDarkMode .container main .controle {
+    width: 50%;
+    left: 50%;
+  }
+  body .container main .controle img, body.bodyLightMode .container main .controle img, body.bodyDarkMode .container main .controle img {
+    width: 900px;
+    bottom: -150px;
+    left: 0;
+    -webkit-filter: none;
+            filter: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

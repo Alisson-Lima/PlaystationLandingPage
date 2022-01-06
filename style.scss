@@ -50,7 +50,6 @@ $gradientePreto: linear-gradient(145deg, #2A2D33, #181A1E);
 
 //  TAMANHO DE TELA: CELULAR 360X640
 body, body.bodyLightMode{
-        background-image: $gradienteBranco;
         h1, h2, h3, h4{
             font-family: BigJohn;
         }
@@ -89,6 +88,7 @@ body, body.bodyLightMode{
         }
         
         .container{
+            background-image: $gradienteBranco;
             position: relative;
             width: 100vw;
             height: 100vh;
@@ -192,7 +192,7 @@ body, body.bodyLightMode{
                 justify-content: space-around;
                 flex-direction: column;
                 .main-text{
-                    z-index: 1;
+                    z-index: 3;
                     h1{
                         font-size: 1.75rem;
                         position: relative;
@@ -221,29 +221,32 @@ body, body.bodyLightMode{
     
                 .controle{
                     position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     width: 100%;
-                    height: 300px;
                     left: 0;
+                    top: 0;
+                    height: 100vh;
                     overflow-y: hidden;
                     overflow-x: hidden;
-                    top: calc(100vh - 300px);
-                    z-index: -1;
+                    z-index: 1;
                     opacity: 0;
                     animation: controlAnimation 1s normal;
                     animation-fill-mode: forwards;
                     animation-delay: 1s;
                     img{
-                        position: absolute;
                         display: block;
+                        position: absolute;
                         width: 800px;
                         bottom: -300px;
                         left: -100px;
-                        z-index: -1;
                         filter: blur(3px);
                     }
                 }
             }
             footer{
+                z-index: 4;
                 display: block;
                 position: absolute;
                 padding: 20px;
@@ -287,7 +290,9 @@ body, body.bodyLightMode{
 }
 
 body.bodyDarkMode{
-    background-image: $gradientePreto;
+    .container{
+        background-image: $gradientePreto;
+    }
     h1, p{
         transition: 1s;
         color: $corBranca;
@@ -309,7 +314,7 @@ body.bodyDarkMode{
     body, body.bodyLightMode, body.bodyDarkMode{
         .container{
             .header{
-                padding: 50px 0;
+                padding: 30px 0;
                 nav{
                     padding: 50px 0 40px;
                 }
@@ -340,17 +345,11 @@ body.bodyDarkMode{
                     }
                 }
                 .controle{
-                    position: absolute;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 650px;
+                    top: -130px;
                     width: 100%;
-                    top: calc(100vh - 825px);
                     img{
-                        width: 110vw;
-                        position: relative;
-                        bottom: -80px;
+                        width: 1000px;
+                        bottom: -250px;
                         left: auto;
                         filter: none;
                     }
@@ -362,6 +361,18 @@ body.bodyDarkMode{
                 bottom: 0;
                 padding-top: 25px;
                 padding-bottom: 25px;
+            }
+        }
+    }
+}
+
+//  AJUSTANDO FOOTER PARA TELA DE PC MENOR
+@media screen and (max-height: 728px){
+    body, body.bodyLightMode, body.bodyDarkMode{
+        .container{
+            footer{
+                padding-top: 10px;
+                padding-bottom: 10px;
             }
         }
     }
@@ -419,8 +430,8 @@ body.bodyDarkMode{
                     width: 50%;
                     left: 50%;
                     img{
-                        width: 100vw;
-                        right: -50%;
+                        width: 1000px;
+                        left: 0;
                     }
                 }
             }
@@ -445,11 +456,8 @@ body.bodyDarkMode{
             }
             main{
                 .controle{
-                    width: 100%;
-                    left: 0;
                     img{
-                        width: 1000px;
-                        bottom: -50px;
+                        width: 1100px;
                     }
                 }
             }
@@ -458,6 +466,137 @@ body.bodyDarkMode{
                     width: 70px;
                     height: 70px;
                     border-radius: 20px;
+                }
+            }
+        }
+    }
+}
+
+//  TAMANHO DE TELA: >1600X800
+@media screen and (min-width: 1650px) {
+    body, body.bodyLightMode, body.bodyDarkMode{
+        position: absolute;
+        left: calc(50% - 800px);
+        top: calc(50% - 400px);
+        .container{
+            display: block;
+            max-width: 1600px;
+            height: 800px;
+            border: 15px solid $corPreta;
+            border-radius: 50px;
+            main{
+                .controle{
+                    height: 800px;
+                }
+            }
+        }
+    }
+
+    body.bodyDarkMode{
+        .container{
+            border: 15px solid $corBranca;
+        }
+    }
+}
+
+//  AJUSTANDO CONTROLE QUANDO HEIGHT: >800px;
+@media screen and (min-height: 801px) and (min-width: 1200px){
+    body, body.bodyLightMode, body.bodyDarkMode{
+        .container{
+            .header{
+                justify-content: left;
+                align-items: center;
+                padding: 30px 100px;
+                .btnMenuBar{
+                    display: none;
+                }
+                nav{
+                    position: relative;
+                    top: auto;
+                    justify-content: right;
+                    align-items: center;
+                    flex-direction: row;
+                    right: auto;
+                    width: auto;
+                    padding: 0;
+                    background-color: transparent;
+                    ::after{
+                        display: none;
+                    }
+                    :first-child{
+                        margin-left: 80px;
+                    }
+                    a{
+                        display: inline-block;
+                        margin-left: 50px;
+                        margin-bottom: 0;
+                        padding: 5px 10px;
+                        color: $corPreta;
+                        transition-property: color;
+                        
+                    }
+                    a:hover{
+                        color: $corAzul;
+                        transition: .5s;
+                    }
+                }
+            }
+            main{
+                .main-text{
+                    margin-top: 100px;
+                    p{
+                        max-width: 600px;
+                    }
+                }
+                .controle{
+                    width: 50%;
+                    left: 50%;
+                    // height: 100vh;
+                    top: -160px;
+                    img{
+                        width: 1200px;
+                        left: 25px;
+                        bottom: -350px;
+                    }
+                }
+            }
+        }
+    }
+
+    body.bodyDarkMode{
+        .container{
+            .header{
+                nav{
+                    a{
+                        color: $corBranca;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//  AJUSTANDO CONTROLE PARA TELAS MENORES QUE NOTEBOOKS MAIORES QUE IPAD PRO
+@media screen and (max-height: 900px) and (max-width: 1199px) and(min-width: 700px){
+    body, body.bodyLightMode, body.bodyDarkMode{
+        .container{
+            main{
+                .main-text{
+                    margin-top: 100px;
+                    p{
+                        max-width: 800px;
+                    }
+                }
+                .controle{
+                    // top: -130px;
+                    width: 50%;
+                    left: 50%;
+                    img{
+                        width: 900px;
+                        bottom: -150px;
+                        left: 0;
+                        filter: none;
+                    }
                 }
             }
         }
